@@ -9,7 +9,7 @@
   
   
   .dropdownmenue{
-    width:860px:
+    max-width:860px;
 	
 
 
@@ -52,6 +52,24 @@
 	  
 	   display:block;
 	}
+@media screen and (max-width:768px){
+
+.dropdownmenue{
+    width:100%;
+}
+
+.dropdownmenue ul{
+    margin:0;
+    padding:0;
+}
+
+.dropdownmenue ul li{
+    float:none;
+    width:100%;
+    margin:0;
+}
+
+}
 	
 	
   
