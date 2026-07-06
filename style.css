@@ -1,0 +1,3159 @@
+/* =====================================================
+   WHITE HEAVEN LINEN
+   Premium Corporate Website
+   STYLE.CSS
+   Part 1 of 6
+=====================================================*/
+
+/*==========================
+ROOT COLOURS
+===========================*/
+
+:root{
+
+--primary:#0F2D52;
+--secondary:#C8A24C;
+--light:#F8F8F6;
+--white:#ffffff;
+--dark:#222222;
+--grey:#666666;
+--border:#e4e4e4;
+
+--shadow:0 8px 25px rgba(0,0,0,.08);
+
+--radius:12px;
+
+--transition:.35s ease;
+
+}
+
+/*==========================
+RESET
+===========================*/
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/*==========================
+BODY
+===========================*/
+
+body{
+
+font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+
+font-size:16px;
+
+line-height:1.7;
+
+color:var(--dark);
+
+background:var(--light);
+
+overflow-x:hidden;
+
+}
+
+/*==========================
+HEADINGS
+===========================*/
+
+h1,h2,h3,h4,h5{
+
+font-family:Georgia,"Times New Roman",serif;
+
+font-weight:700;
+
+color:var(--primary);
+
+line-height:1.3;
+
+}
+
+p{
+
+margin-bottom:18px;
+
+color:#444;
+
+}
+
+/*==========================
+LINKS
+===========================*/
+
+a{
+
+text-decoration:none;
+
+transition:var(--transition);
+
+}
+
+/*==========================
+IMAGES
+===========================*/
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+/*==========================
+CONTAINER
+===========================*/
+
+.container{
+
+width:92%;
+
+max-width:1280px;
+
+margin:auto;
+
+}
+
+/*==========================
+HEADER
+===========================*/
+
+header{
+
+position:sticky;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+background:rgba(255,255,255,.98);
+
+backdrop-filter:blur(10px);
+
+box-shadow:0 2px 15px rgba(0,0,0,.06);
+
+z-index:9999;
+
+}
+
+/*==========================
+NAV CONTAINER
+===========================*/
+
+.nav-container{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:14px 0;
+
+}
+
+/*==========================
+LOGO
+===========================*/
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+color:var(--primary);
+
+}
+
+/*==========================
+LOGO IMAGE
+===========================*/
+
+.logo img{
+
+height:95px;
+
+width:auto;
+
+transition:.4s;
+
+}
+
+/* Logo hover */
+
+.logo:hover img{
+
+transform:scale(1.03);
+
+}
+
+/*==========================
+COMPANY NAME
+===========================*/
+
+.logo h1{
+
+font-size:34px;
+
+letter-spacing:1px;
+
+margin:0;
+
+color:var(--primary);
+
+}
+
+.logo p{
+
+margin-top:6px;
+
+font-size:15px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:var(--secondary);
+
+}
+
+/*==========================
+NAVIGATION
+===========================*/
+
+nav ul{
+
+display:flex;
+
+align-items:center;
+
+list-style:none;
+
+gap:10px;
+
+}
+
+/*==========================
+MENU ITEMS
+===========================*/
+
+nav ul li{
+
+position:relative;
+
+}
+
+/*==========================
+MENU LINKS
+===========================*/
+
+nav ul li a{
+
+display:block;
+
+padding:14px 18px;
+
+font-weight:600;
+
+font-size:15px;
+
+color:var(--primary);
+
+border-radius:30px;
+
+transition:var(--transition);
+
+}
+
+/*==========================
+MENU HOVER
+===========================*/
+
+nav ul li a:hover{
+
+background:var(--primary);
+
+color:white;
+
+}
+
+/*==========================
+ACTIVE MENU
+===========================*/
+
+nav ul li a.active{
+
+background:var(--secondary);
+
+color:var(--primary);
+
+}
+
+/*==========================
+HAMBURGER BUTTON
+===========================*/
+
+.menu-toggle{
+
+display:none;
+
+font-size:28px;
+
+background:none;
+
+border:none;
+
+color:var(--primary);
+
+cursor:pointer;
+
+}
+
+/*==========================
+PAGE BANNER
+===========================*/
+
+.page-banner{
+
+background:
+
+linear-gradient(
+
+rgba(15,45,82,.88),
+
+rgba(15,45,82,.82)
+
+),
+
+url("images/banner.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+padding:120px 0;
+
+text-align:center;
+
+color:white;
+
+}
+
+/*==========================
+PAGE BANNER TEXT
+===========================*/
+
+.page-banner h1{
+
+font-size:52px;
+
+margin-bottom:20px;
+
+color:white;
+
+}
+
+.page-banner p{
+
+max-width:850px;
+
+margin:auto;
+
+font-size:20px;
+
+color:#f4f4f4;
+
+}
+
+/*==========================
+SECTION
+===========================*/
+
+.section{
+
+padding:90px 0;
+
+background:white;
+
+}
+
+/* Alternate section */
+
+.section.light{
+
+background:#f5f7fa;
+
+}
+
+/*==========================
+SECTION TITLE
+===========================*/
+
+.section-title{
+
+font-size:40px;
+
+margin-bottom:25px;
+
+text-align:center;
+
+position:relative;
+
+}
+
+/* Gold line */
+
+.section-title::after{
+
+content:"";
+
+width:80px;
+
+height:4px;
+
+background:var(--secondary);
+
+display:block;
+
+margin:18px auto 0;
+
+border-radius:20px;
+
+}
+
+/*==========================
+SECTION TEXT
+===========================*/
+
+.section-text{
+
+max-width:950px;
+
+margin:auto;
+
+text-align:center;
+
+font-size:18px;
+
+color:#555;
+
+line-height:1.8;
+
+}
+
+/* End of Part 1 */
+
+/*=====================================================
+   STYLE.CSS
+   Part 2 of 6
+   Buttons • Cards • Grid • Images • Gallery
+=====================================================*/
+
+
+/*==========================
+BUTTONS
+===========================*/
+
+.btn{
+
+display:inline-block;
+
+padding:14px 34px;
+
+background:var(--primary);
+
+color:#fff;
+
+font-size:16px;
+
+font-weight:600;
+
+border-radius:40px;
+
+transition:var(--transition);
+
+border:2px solid var(--primary);
+
+cursor:pointer;
+
+box-shadow:var(--shadow);
+
+}
+
+.btn:hover{
+
+background:var(--secondary);
+
+border-color:var(--secondary);
+
+color:var(--primary);
+
+transform:translateY(-3px);
+
+}
+
+
+/* White Button */
+
+.btn-white{
+
+display:inline-block;
+
+padding:14px 34px;
+
+background:#fff;
+
+color:var(--primary);
+
+font-weight:600;
+
+border-radius:40px;
+
+border:2px solid #fff;
+
+transition:var(--transition);
+
+}
+
+.btn-white:hover{
+
+background:var(--secondary);
+
+border-color:var(--secondary);
+
+color:var(--primary);
+
+}
+
+
+/*==========================
+FEATURE GRID
+===========================*/
+
+.feature-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+margin-top:50px;
+
+}
+
+
+/*==========================
+FEATURE CARD
+===========================*/
+
+.feature-card{
+
+background:#fff;
+
+border-radius:15px;
+
+padding:35px;
+
+box-shadow:var(--shadow);
+
+transition:var(--transition);
+
+border-top:5px solid var(--secondary);
+
+}
+
+.feature-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+}
+
+
+/* Card Images */
+
+.feature-card img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:10px;
+
+margin-bottom:20px;
+
+}
+
+
+/* Card Headings */
+
+.feature-card h3{
+
+font-size:24px;
+
+margin-bottom:15px;
+
+color:var(--primary);
+
+}
+
+
+/* Card Text */
+
+.feature-card p{
+
+color:#666;
+
+font-size:16px;
+
+line-height:1.7;
+
+}
+
+
+/*==========================
+PRODUCT GRID
+===========================*/
+
+.product-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:35px;
+
+margin-top:50px;
+
+}
+
+
+/*==========================
+PRODUCT CARD
+===========================*/
+
+.product-card{
+
+background:#fff;
+
+overflow:hidden;
+
+border-radius:15px;
+
+box-shadow:var(--shadow);
+
+transition:var(--transition);
+
+}
+
+.product-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+/* Product Image */
+
+.product-card img{
+
+width:100%;
+
+height:260px;
+
+object-fit:cover;
+
+transition:.4s;
+
+}
+
+.product-card:hover img{
+
+transform:scale(1.05);
+
+}
+
+
+/* Product Content */
+
+.product-content{
+
+padding:30px;
+
+}
+
+.product-content h3{
+
+margin-bottom:15px;
+
+}
+
+.product-content p{
+
+margin-bottom:20px;
+
+}
+
+
+/*==========================
+CARD GRID
+===========================*/
+
+.card-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:35px;
+
+}
+
+
+/*==========================
+GENERAL CARD
+===========================*/
+
+.card{
+
+background:#fff;
+
+padding:25px;
+
+border-radius:15px;
+
+box-shadow:var(--shadow);
+
+transition:var(--transition);
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+/*==========================
+INDUSTRY GRID
+===========================*/
+
+.industry-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+margin-top:45px;
+
+}
+
+
+/*==========================
+INDUSTRY CARD
+===========================*/
+
+.industry-card{
+
+background:#fff;
+
+padding:35px;
+
+border-radius:15px;
+
+text-align:center;
+
+box-shadow:var(--shadow);
+
+transition:var(--transition);
+
+}
+
+.industry-card:hover{
+
+background:var(--primary);
+
+color:#fff;
+
+transform:translateY(-8px);
+
+}
+
+.industry-card:hover h3{
+
+color:#fff;
+
+}
+
+
+/*==========================
+GALLERY
+===========================*/
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+margin-top:40px;
+
+}
+
+
+/* Gallery Images */
+
+.gallery img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:12px;
+
+transition:.4s;
+
+box-shadow:var(--shadow);
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.04);
+
+}
+
+
+/*==========================
+IMAGE GRID
+===========================*/
+
+.image-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+
+margin-top:40px;
+
+}
+
+.image-grid img{
+
+width:100%;
+
+height:240px;
+
+object-fit:cover;
+
+border-radius:12px;
+
+box-shadow:var(--shadow);
+
+transition:.4s;
+
+}
+
+.image-grid img:hover{
+
+transform:translateY(-6px);
+
+}
+
+
+/*==========================
+LISTS
+===========================*/
+
+ul{
+
+padding-left:22px;
+
+}
+
+li{
+
+margin-bottom:8px;
+
+}
+
+
+/*==========================
+ICONS
+===========================*/
+
+.icon{
+
+font-size:50px;
+
+color:var(--secondary);
+
+margin-bottom:20px;
+
+}
+
+
+/*==========================
+HORIZONTAL DIVIDER
+===========================*/
+
+.divider{
+
+width:120px;
+
+height:4px;
+
+background:var(--secondary);
+
+margin:30px auto;
+
+border-radius:20px;
+
+}
+
+
+/*==========================
+TEXT ALIGNMENT
+===========================*/
+
+.text-center{
+
+text-align:center;
+
+}
+
+.text-left{
+
+text-align:left;
+
+}
+
+.text-right{
+
+text-align:right;
+
+}
+
+
+/*==========================
+SPACING
+===========================*/
+
+.mt-20{
+
+margin-top:20px;
+
+}
+
+.mt-40{
+
+margin-top:40px;
+
+}
+
+.mt-60{
+
+margin-top:60px;
+
+}
+
+.mb-20{
+
+margin-bottom:20px;
+
+}
+
+.mb-40{
+
+margin-bottom:40px;
+
+}
+
+.mb-60{
+
+margin-bottom:60px;
+
+}
+
+
+/* End of Part 2 */
+
+/*=====================================================
+   STYLE.CSS
+   Part 3 of 6
+   Contact • Forms • Statistics • Mission • Certifications
+=====================================================*/
+
+
+/*==========================
+CONTACT GRID
+===========================*/
+
+.contact-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+
+gap:50px;
+
+align-items:flex-start;
+
+margin-top:50px;
+
+}
+
+
+/*==========================
+CONTACT CARD
+===========================*/
+
+.contact-card{
+
+background:#fff;
+
+padding:25px;
+
+border-left:5px solid var(--secondary);
+
+border-radius:12px;
+
+box-shadow:var(--shadow);
+
+margin-bottom:25px;
+
+transition:var(--transition);
+
+}
+
+.contact-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+
+/*==========================
+CONTACT TITLES
+===========================*/
+
+.contact-card h3{
+
+margin-bottom:12px;
+
+color:var(--primary);
+
+font-size:22px;
+
+}
+
+.contact-card p{
+
+margin:0;
+
+line-height:1.8;
+
+}
+
+
+/*==========================
+FORM
+===========================*/
+
+form{
+
+background:#fff;
+
+padding:35px;
+
+border-radius:15px;
+
+box-shadow:var(--shadow);
+
+}
+
+
+/*==========================
+INPUTS
+===========================*/
+
+input,
+select,
+textarea{
+
+width:100%;
+
+padding:15px 18px;
+
+margin-bottom:20px;
+
+font-size:16px;
+
+border:1px solid #d9d9d9;
+
+border-radius:10px;
+
+outline:none;
+
+transition:var(--transition);
+
+background:#fff;
+
+font-family:inherit;
+
+}
+
+
+/* Focus */
+
+input:focus,
+select:focus,
+textarea:focus{
+
+border-color:var(--secondary);
+
+box-shadow:0 0 10px rgba(200,162,76,.25);
+
+}
+
+
+/* Textarea */
+
+textarea{
+
+resize:vertical;
+
+min-height:180px;
+
+}
+
+
+/* Submit Button */
+
+button{
+
+cursor:pointer;
+
+font-family:inherit;
+
+}
+
+
+/*==========================
+STATISTICS
+===========================*/
+
+.stats{
+
+background:var(--primary);
+
+padding:80px 0;
+
+color:#fff;
+
+}
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:30px;
+
+text-align:center;
+
+}
+
+.stat-box{
+
+padding:30px;
+
+}
+
+.stat-box h2{
+
+font-size:56px;
+
+color:var(--secondary);
+
+margin-bottom:10px;
+
+}
+
+.stat-box p{
+
+color:#fff;
+
+font-size:18px;
+
+}
+
+
+/*==========================
+MISSION & VISION
+===========================*/
+
+.mission-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+
+gap:40px;
+
+margin-top:50px;
+
+}
+
+.mission-card{
+
+background:#fff;
+
+padding:40px;
+
+border-radius:15px;
+
+box-shadow:var(--shadow);
+
+border-top:5px solid var(--secondary);
+
+transition:var(--transition);
+
+}
+
+.mission-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.mission-card h2{
+
+margin-bottom:20px;
+
+}
+
+.mission-card p{
+
+line-height:1.9;
+
+}
+
+
+/*==========================
+CERTIFICATIONS
+===========================*/
+
+.certification-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:35px;
+
+align-items:center;
+
+margin-top:50px;
+
+}
+
+.certification-grid img{
+
+width:100%;
+
+max-width:160px;
+
+margin:auto;
+
+transition:var(--transition);
+
+filter:grayscale(15%);
+
+}
+
+.certification-grid img:hover{
+
+transform:scale(1.08);
+
+filter:none;
+
+}
+
+
+/*==========================
+QUALITY TABLE
+===========================*/
+
+.table-responsive{
+
+overflow-x:auto;
+
+margin-top:40px;
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+background:#fff;
+
+box-shadow:var(--shadow);
+
+border-radius:12px;
+
+overflow:hidden;
+
+}
+
+th{
+
+background:var(--primary);
+
+color:#fff;
+
+padding:18px;
+
+text-align:left;
+
+}
+
+td{
+
+padding:18px;
+
+border-bottom:1px solid #ececec;
+
+}
+
+tr:nth-child(even){
+
+background:#fafafa;
+
+}
+
+tr:hover{
+
+background:#f3f8fc;
+
+}
+
+
+/*==========================
+PROCESS
+===========================*/
+
+.process-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+margin-top:50px;
+
+}
+
+.process-card{
+
+background:#fff;
+
+padding:35px;
+
+text-align:center;
+
+border-radius:15px;
+
+box-shadow:var(--shadow);
+
+position:relative;
+
+transition:var(--transition);
+
+}
+
+.process-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.process-number{
+
+width:60px;
+
+height:60px;
+
+background:var(--secondary);
+
+color:var(--primary);
+
+font-size:24px;
+
+font-weight:bold;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin:0 auto 25px;
+
+}
+
+
+/*==========================
+TIMELINE
+===========================*/
+
+.timeline{
+
+position:relative;
+
+margin-top:60px;
+
+padding-left:35px;
+
+}
+
+.timeline::before{
+
+content:"";
+
+position:absolute;
+
+left:10px;
+
+top:0;
+
+width:4px;
+
+height:100%;
+
+background:var(--secondary);
+
+}
+
+.timeline-item{
+
+position:relative;
+
+margin-bottom:40px;
+
+padding-left:35px;
+
+}
+
+.timeline-item::before{
+
+content:"";
+
+position:absolute;
+
+left:-3px;
+
+top:8px;
+
+width:20px;
+
+height:20px;
+
+border-radius:50%;
+
+background:var(--primary);
+
+border:4px solid var(--secondary);
+
+}
+
+.timeline-item h3{
+
+margin-bottom:8px;
+
+}
+
+
+/*==========================
+QUOTE BOX
+===========================*/
+
+.quote{
+
+background:var(--primary);
+
+color:#fff;
+
+padding:45px;
+
+border-radius:15px;
+
+font-size:22px;
+
+font-style:italic;
+
+text-align:center;
+
+margin:60px auto;
+
+max-width:900px;
+
+}
+
+.quote strong{
+
+display:block;
+
+margin-top:20px;
+
+color:var(--secondary);
+
+font-style:normal;
+
+font-size:18px;
+
+}
+
+
+/* End of Part 3 */
+
+/*=====================================================
+  STYLE.CSS
+  Part 4 of 6
+  Product Sections • CTA • Footer • News • Utilities
+======================================================*/
+
+
+/*====================================
+PRODUCT SOLUTION SECTION
+=====================================*/
+
+.product-section{
+
+padding:90px 0;
+
+background:#fff;
+
+}
+
+.product-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:35px;
+
+margin-top:50px;
+
+}
+
+
+/*====================================
+PRODUCT BOX
+=====================================*/
+
+.product-box{
+
+background:#fff;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+transition:var(--transition);
+
+}
+
+.product-box:hover{
+
+transform:translateY(-10px);
+
+}
+
+.product-box img{
+
+width:100%;
+
+height:240px;
+
+object-fit:cover;
+
+}
+
+.product-box-content{
+
+padding:30px;
+
+}
+
+.product-box h3{
+
+margin-bottom:15px;
+
+font-size:24px;
+
+color:var(--primary);
+
+}
+
+.product-box p{
+
+margin-bottom:25px;
+
+}
+
+
+/*====================================
+HEALTHCARE / HOSPITALITY BOXES
+=====================================*/
+
+.service-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+margin-top:45px;
+
+}
+
+.service-card{
+
+background:#fff;
+
+padding:35px;
+
+border-radius:15px;
+
+text-align:center;
+
+box-shadow:var(--shadow);
+
+transition:var(--transition);
+
+border-bottom:5px solid transparent;
+
+}
+
+.service-card:hover{
+
+border-bottom:5px solid var(--secondary);
+
+transform:translateY(-8px);
+
+}
+
+.service-card img{
+
+width:90px;
+
+margin:auto;
+
+margin-bottom:20px;
+
+}
+
+.service-card h3{
+
+margin-bottom:15px;
+
+}
+
+
+/*====================================
+WHY CHOOSE US
+=====================================*/
+
+.why-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+margin-top:50px;
+
+}
+
+.why-card{
+
+padding:35px;
+
+background:white;
+
+border-radius:15px;
+
+box-shadow:var(--shadow);
+
+text-align:center;
+
+transition:.35s;
+
+}
+
+.why-card:hover{
+
+background:var(--primary);
+
+color:white;
+
+}
+
+.why-card:hover h3{
+
+color:white;
+
+}
+
+.why-card i{
+
+font-size:48px;
+
+color:var(--secondary);
+
+margin-bottom:20px;
+
+}
+
+
+/*====================================
+NEWS SECTION
+=====================================*/
+
+.news-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+margin-top:50px;
+
+}
+
+.news-card{
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+transition:var(--transition);
+
+}
+
+.news-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.news-card img{
+
+width:100%;
+
+height:240px;
+
+object-fit:cover;
+
+}
+
+.news-content{
+
+padding:30px;
+
+}
+
+.news-date{
+
+color:var(--secondary);
+
+font-weight:bold;
+
+font-size:14px;
+
+margin-bottom:10px;
+
+display:block;
+
+}
+
+.news-content h3{
+
+margin-bottom:15px;
+
+}
+
+
+/*====================================
+NEWSLETTER
+=====================================*/
+
+.newsletter{
+
+background:var(--primary);
+
+padding:80px 0;
+
+text-align:center;
+
+color:white;
+
+}
+
+.newsletter h2{
+
+color:white;
+
+margin-bottom:20px;
+
+}
+
+.newsletter p{
+
+color:#ddd;
+
+margin-bottom:30px;
+
+}
+
+.newsletter form{
+
+max-width:650px;
+
+margin:auto;
+
+display:flex;
+
+gap:15px;
+
+background:none;
+
+box-shadow:none;
+
+padding:0;
+
+}
+
+.newsletter input{
+
+margin:0;
+
+}
+
+.newsletter .btn{
+
+white-space:nowrap;
+
+}
+
+
+/*====================================
+CTA
+=====================================*/
+
+.cta{
+
+background:
+
+linear-gradient(rgba(15,45,82,.93),
+
+rgba(15,45,82,.93)),
+
+url(images/banner.jpg);
+
+background-size:cover;
+
+background-position:center;
+
+padding:90px 20px;
+
+text-align:center;
+
+color:white;
+
+}
+
+.cta h2{
+
+font-size:42px;
+
+margin-bottom:25px;
+
+color:white;
+
+}
+
+.cta p{
+
+max-width:850px;
+
+margin:auto;
+
+margin-bottom:35px;
+
+font-size:18px;
+
+color:#f4f4f4;
+
+}
+
+
+/*====================================
+FOOTER
+=====================================*/
+
+footer{
+
+background:#071A33;
+
+color:#ffffff;
+
+padding-top:70px;
+
+margin-top:0;
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:40px;
+
+padding-bottom:50px;
+
+}
+
+.footer-column h3{
+
+color:white;
+
+margin-bottom:20px;
+
+font-size:22px;
+
+}
+
+.footer-column p{
+
+color:#ffffff;
+
+}
+
+.footer-column ul{
+
+list-style:none;
+
+padding:0;
+
+}
+
+.footer-column ul li{
+
+margin-bottom:12px;
+
+}
+
+.footer-column ul li a{
+
+color:#ffffff;
+
+transition:.3s;
+
+}
+
+.footer-column ul li a:hover{
+
+color:var(--secondary);
+
+padding-left:8px;
+
+}
+
+
+/*====================================
+FOOTER BOTTOM
+=====================================*/
+
+.footer-bottom{
+
+border-top:1px solid rgba(255,255,255,.12);
+
+padding:25px 0;
+
+text-align:center;
+
+margin-top:20px;
+
+}
+
+.footer-bottom p{
+
+margin:0;
+
+color:#ffffff;
+
+}
+
+
+/*====================================
+SOCIAL ICONS
+=====================================*/
+
+.social-icons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+.social-icons a{
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+background:#183A63;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:white;
+
+font-size:18px;
+
+transition:.35s;
+
+}
+
+.social-icons a:hover{
+
+background:var(--secondary);
+
+color:var(--primary);
+
+}
+
+
+/*====================================
+SMALL UTILITIES
+=====================================*/
+
+.rounded{
+
+border-radius:15px;
+
+}
+
+.shadow{
+
+box-shadow:var(--shadow);
+
+}
+
+.bg-light{
+
+background:#f6f7f9;
+
+}
+
+.bg-primary{
+
+background:var(--primary);
+
+color:white;
+
+}
+
+.bg-primary h2,
+
+.bg-primary h3{
+
+color:white;
+
+}
+
+/* ===================================================
+   ANIMATIONS
+=================================================== */
+
+@keyframes fadeUp {
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.section,
+.feature-card,
+.product-card,
+.stat-card,
+.contact-card,
+.gallery img{
+
+    animation:fadeUp .8s ease;
+
+}
+
+
+/* ===================================================
+   SCROLL TO TOP BUTTON
+=================================================== */
+
+#topBtn{
+
+    display:none;
+    position:fixed;
+
+    bottom:25px;
+    right:25px;
+
+    width:55px;
+    height:55px;
+
+    border:none;
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:24px;
+    cursor:pointer;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+    z-index:9999;
+
+}
+
+#topBtn:hover{
+
+    background:var(--secondary);
+
+    transform:translateY(-4px);
+
+}
+
+
+/* ===================================================
+   RESPONSIVE
+=================================================== */
+
+@media(max-width:992px){
+
+.nav-container{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+nav ul{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.logo img{
+
+    width:150px;
+
+}
+
+.logo h1{
+
+    font-size:28px;
+
+}
+
+.page-banner h1{
+
+    font-size:42px;
+
+}
+
+.section-title{
+
+    font-size:34px;
+
+}
+
+.stats-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+/* --------------------------- */
+
+@media(max-width:768px){
+
+.logo{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.logo img{
+
+    width:130px;
+
+}
+
+.logo h1{
+
+    font-size:24px;
+
+}
+
+.logo p{
+
+    font-size:14px;
+
+}
+
+nav ul{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.page-banner{
+
+    padding:90px 20px;
+
+}
+
+.page-banner h1{
+
+    font-size:34px;
+
+}
+
+.page-banner p{
+
+    font-size:17px;
+
+}
+
+.section{
+
+    padding:70px 0;
+
+}
+
+.feature-grid,
+.product-grid,
+.stats-grid,
+.contact-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.gallery{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.footer-grid{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+}
+
+
+/* --------------------------- */
+
+@media(max-width:480px){
+
+.container{
+
+    width:94%;
+
+}
+
+.logo img{
+
+    width:110px;
+
+}
+
+.page-banner h1{
+
+    font-size:28px;
+
+}
+
+.section-title{
+
+    font-size:28px;
+
+}
+
+.btn{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.gallery{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+/* ===================================================
+   PART 5
+   FOOTER • ANIMATIONS • MOBILE RESPONSIVE
+=================================================== */
+
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+    background:#0b2f45;
+    color:#ffffff;
+    padding:60px 0 25px;
+}
+
+.footer-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:40px;
+
+}
+
+.footer-column h3{
+
+    margin-bottom:20px;
+    color:#ffffff;
+    font-size:22px;
+
+}
+
+.footer-column p{
+
+    color:#ffffff;
+    line-height:1.8;
+
+}
+
+.footer-column ul{
+
+    list-style:none;
+    padding:0;
+
+}
+
+.footer-column ul li{
+
+    margin-bottom:12px;
+
+}
+
+.footer-column ul li a{
+
+    color:#ffffff;
+    text-decoration:none;
+    transition:.3s;
+
+}
+
+.footer-column ul li a:hover{
+
+    color:#ffffff;
+    padding-left:6px;
+
+}
+
+.footer-bottom{
+
+    border-top:1px solid rgba(255,255,255,.15);
+    margin-top:40px;
+    padding-top:20px;
+    text-align:center;
+    color:#FFFFFF;
+    font-size:14px;
+
+}
+
+.footer-social{
+
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+
+}
+
+.footer-social a{
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+    background:#0f5e87;
+    color:#ffffff;
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.footer-social a:hover{
+
+    background:#8cc63f;
+    color:#ffffff;
+
+}
+
+
+/* ==========================
+   BACK TO TOP BUTTON
+========================== */
+
+.back-top{
+
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    background:#8cc63f;
+
+    color:#fff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.20);
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+.back-top:hover{
+
+    background:#0f5e87;
+
+}
+
+
+/* ==========================
+   SIMPLE ANIMATIONS
+========================== */
+
+.fade-up{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+.zoom{
+
+    animation:zoom .7s ease;
+
+}
+
+@keyframes zoom{
+
+    from{
+
+        opacity:0;
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+
+
+/* ==========================
+   HOVER EFFECTS
+========================== */
+
+.feature-card,
+.industry-card,
+.stat-card,
+.product-card{
+
+    transition:.35s;
+
+}
+
+.feature-card:hover,
+.industry-card:hover,
+.stat-card:hover,
+.product-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+/* ==========================
+   MOBILE MENU BUTTON
+========================== */
+
+.menu-toggle{
+
+    display:none;
+
+    background:#0f5e87;
+    color:#fff;
+
+    border:none;
+
+    padding:10px 15px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+}
+
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+@media(max-width:992px){
+
+.logo img{
+
+    width:150px;
+
+}
+
+.logo h1{
+
+    font-size:28px;
+
+}
+
+nav ul{
+
+    gap:15px;
+
+}
+
+.page-banner h1{
+
+    font-size:40px;
+
+}
+
+.hero-content h1{
+
+    font-size:42px;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.nav-container{
+
+    flex-direction:column;
+    align-items:flex-start;
+
+}
+
+.menu-toggle{
+
+    display:block;
+    margin-bottom:15px;
+
+}
+
+nav{
+
+    width:100%;
+
+}
+
+nav ul{
+
+    display:none;
+    flex-direction:column;
+    width:100%;
+
+}
+
+nav ul.show{
+
+    display:flex;
+
+}
+
+nav ul li{
+
+    width:100%;
+
+}
+
+nav ul li a{
+
+    display:block;
+    padding:14px;
+
+}
+
+.logo{
+
+    flex-direction:column;
+    text-align:center;
+    width:100%;
+
+}
+
+.logo img{
+
+    width:130px;
+
+}
+
+.logo h1{
+
+    font-size:24px;
+
+}
+
+.logo p{
+
+    font-size:14px;
+
+}
+
+.page-banner{
+
+    padding:90px 20px;
+
+}
+
+.page-banner h1{
+
+    font-size:34px;
+
+}
+
+.section{
+
+    padding:70px 0;
+
+}
+
+.feature-grid,
+.industry-grid,
+.product-grid,
+.stats-grid,
+.cert-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.footer-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+
+@media(max-width:480px){
+
+.page-banner h1{
+
+    font-size:28px;
+
+}
+
+.hero-content h1{
+
+    font-size:30px;
+
+}
+
+.section-title{
+
+    font-size:28px;
+
+}
+
+.btn{
+
+    width:100%;
+    text-align:center;
+
+}
+
+.logo img{
+
+    width:110px;
+
+}
+
+}
+
+
+/* ===================================================
+   PART 6
+   UTILITIES & FINAL ENHANCEMENTS
+=================================================== */
+
+/* ---------- Text Alignment ---------- */
+
+.text-center{
+    text-align:center;
+}
+
+.text-left{
+    text-align:left;
+}
+
+.text-right{
+    text-align:right;
+}
+
+
+/* ---------- Margin Utilities ---------- */
+
+.mt-20{
+    margin-top:20px;
+}
+
+.mt-30{
+    margin-top:30px;
+}
+
+.mt-40{
+    margin-top:40px;
+}
+
+.mt-60{
+    margin-top:60px;
+}
+
+.mb-20{
+    margin-bottom:20px;
+}
+
+.mb-30{
+    margin-bottom:30px;
+}
+
+.mb-40{
+    margin-bottom:40px;
+}
+
+.mb-60{
+    margin-bottom:60px;
+}
+
+
+/* ---------- Padding Utilities ---------- */
+
+.pt-40{
+    padding-top:40px;
+}
+
+.pt-60{
+    padding-top:60px;
+}
+
+.pb-40{
+    padding-bottom:40px;
+}
+
+.pb-60{
+    padding-bottom:60px;
+}
+
+
+/* ---------- Width ---------- */
+
+.w-100{
+    width:100%;
+}
+
+.max-900{
+    max-width:900px;
+    margin:auto;
+}
+
+.max-1100{
+    max-width:1100px;
+    margin:auto;
+}
+
+
+/* ---------- Shadows ---------- */
+
+.shadow{
+
+    box-shadow:0 12px 35px rgba(0,0,0,.10);
+
+}
+
+.shadow-hover{
+
+    transition:.35s;
+
+}
+
+.shadow-hover:hover{
+
+    box-shadow:0 18px 45px rgba(0,0,0,.18);
+
+}
+
+
+/* ---------- Rounded ---------- */
+
+.rounded{
+
+    border-radius:15px;
+
+}
+
+.rounded-large{
+
+    border-radius:25px;
+
+}
+
+
+/* ---------- Image Helpers ---------- */
+
+.img-fluid{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+}
+
+.img-rounded{
+
+    border-radius:15px;
+
+}
+
+.img-shadow{
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+
+/* ---------- Lists ---------- */
+
+.list-clean{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.list-clean li{
+
+    padding:8px 0;
+
+}
+
+
+/* ---------- Flex Helpers ---------- */
+
+.flex{
+
+    display:flex;
+
+}
+
+.flex-center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.flex-between{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.flex-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+/* ---------- Grid Helpers ---------- */
+
+.grid-2{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.grid-3{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.grid-4{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+/* ---------- Responsive Utility ---------- */
+
+@media(max-width:768px){
+
+.grid-2,
+.grid-3,
+.grid-4{
+
+    grid-template-columns:1fr;
+
+}
+
+.flex-between{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+}
+
+
+/* ---------- Link Styles ---------- */
+
+a{
+
+    transition:.3s;
+
+}
+
+a:hover{
+
+    text-decoration:none;
+
+}
+
+
+/* ---------- Selection Colour ---------- */
+
+::selection{
+
+    background:#0f5e87;
+
+    color:#fff;
+
+}
+
+
+/* ---------- Smooth Scrolling ---------- */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+/* ---------- Hide Elements ---------- */
+
+.hide{
+
+    display:none;
+
+}
+
+
+/* ---------- Display ---------- */
+
+.show{
+
+    display:block;
+
+}
+
+/* Force all footer text to white */
+footer,
+footer p,
+footer li,
+footer a,
+.footer-column p,
+.footer-column li,
+.footer-column a {
+    color: #ffffff !important;
+}
+
+/* ===================================================
+   WHITE HEAVEN LINEN
+   PREMIUM CORPORATE WEBSITE
+   END OF CSS
+=================================================== */
