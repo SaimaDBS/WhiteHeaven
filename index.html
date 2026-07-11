@@ -46,13 +46,43 @@ content="White Heaven Linen™ is an Ireland-based supplier of premium textile s
 
 <nav>
 
-<ul>
+<button class="menu-toggle" aria-label="Toggle Navigation">
 
-<li><a href="index.html" class="active">Home</a></li>
+☰
+
+</button>
+
+<ul class="nav-menu">
+
+<li><a href="index.html">Home</a></li>
 
 <li><a href="about.html">About</a></li>
 
-<li><a href="products.html">Products</a></li>
+<li class="dropdown">
+
+<a href="products.html">
+
+Products
+
+<span class="dropdown-arrow">▼</span>
+
+</a>
+
+<ul class="dropdown-menu">
+
+<li><a href="products.html">All Products</a></li>
+
+<li><a href="healthcare.html">Healthcare Solutions</a></li>
+
+<li><a href="hospitality.html">Hospitality Solutions</a></li>
+
+<li><a href="products.html#technical">Technical Textiles</a></li>
+
+<li><a href="products.html#custom">Custom Manufacturing</a></li>
+
+</ul>
+
+</li>
 
 <li><a href="quality.html">Quality</a></li>
 
@@ -63,7 +93,6 @@ content="White Heaven Linen™ is an Ireland-based supplier of premium textile s
 </ul>
 
 </nav>
-
 </div>
 
 </header>
