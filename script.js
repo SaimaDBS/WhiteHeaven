@@ -1,227 +1,209 @@
-/* =====================================================
-   WHITE HEAVEN LINEN
-   JavaScript
-   Version 2.0
-===================================================== */
+/*=========================================================
+WHITE HEAVEN LINEN™
+Main JavaScript
+Version 2.0
+=========================================================*/
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-// =====================================
-// MOBILE MENU
-// =====================================
+    /*=====================================================
+    MOBILE MENU
+    =====================================================*/
 
-const menuToggle = document.querySelector(".menu-toggle");
-const navMenu = document.querySelector(".nav-menu");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
 
-menuToggle.addEventListener("click", () => {
+    if (menuToggle && navMenu) {
 
-    navMenu.classList.toggle("active");
+        menuToggle.addEventListener("click", () => {
 
-});
+            navMenu.classList.toggle("active");
 
-// =====================================
-// MOBILE DROPDOWN
-// =====================================
+            menuToggle.classList.toggle("active");
 
-document.querySelectorAll(".dropdown > a").forEach(item=>{
+            if (menuToggle.classList.contains("active")) {
 
-item.addEventListener("click",function(e){
+                menuToggle.innerHTML = "&times;";
 
-if(window.innerWidth<992){
+            } else {
 
-e.preventDefault();
-
-this.parentElement.classList.toggle("active");
-
-}
-
-});
-
-});
-
-// =====================================
-// CLOSE MENU AFTER CLICK
-// =====================================
-
-document.querySelectorAll(".nav-menu a").forEach(link=>{
-
-link.addEventListener("click",()=>{
-
-if(window.innerWidth<992){
-
-if(!link.parentElement.classList.contains("dropdown")){
-
-navMenu.classList.remove("active");
-
-}
-
-}
-
-});
-
-});
-
-    /*==========================================
-      ACTIVE NAVIGATION
-    ==========================================*/
-
-    const currentPage = window.location.pathname.split("/").pop();
-
-    const navLinks = document.querySelectorAll("nav ul li a");
-
-    navLinks.forEach(function(link){
-
-        const page = link.getAttribute("href");
-
-        if(page === currentPage){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-
-    /*==========================================
-      SMOOTH SCROLL
-    ==========================================*/
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-
-        anchor.addEventListener("click",function(e){
-
-            e.preventDefault();
-
-            const target=document.querySelector(this.getAttribute("href"));
-
-            if(target){
-
-                target.scrollIntoView({
-
-                    behavior:"smooth"
-
-                });
+                menuToggle.innerHTML = "&#9776;";
 
             }
 
         });
 
-    });
-
-
-    /*==========================================
-      FADE IN ANIMATION
-    ==========================================*/
-
-    const fadeElements=document.querySelectorAll(
-
-        ".feature-card,.industry-card,.product-card,.stat-card"
-
-    );
-
-    if(fadeElements.length>0){
-
-        const observer=new IntersectionObserver(entries=>{
-
-            entries.forEach(entry=>{
-
-                if(entry.isIntersecting){
-
-                    entry.target.classList.add("fade-up");
-
-                }
-
-            });
-
-        },{
-
-            threshold:0.15
-
-        });
-
-        fadeElements.forEach(el=>observer.observe(el));
-
     }
 
+    /*=====================================================
+    MOBILE DROPDOWN
+    =====================================================*/
 
-    /*==========================================
-      CONTACT FORM VALIDATION
-    ==========================================*/
+    const dropdowns = document.querySelectorAll(".dropdown");
 
-    const form=document.querySelector("form");
+    dropdowns.forEach(dropdown => {
 
-    if(form){
+        const link = dropdown.querySelector("a");
 
-        form.addEventListener("submit",function(e){
+        if (window.innerWidth <= 991) {
 
-            const required=form.querySelectorAll("[required]");
-
-            let valid=true;
-
-            required.forEach(function(input){
-
-                if(input.value.trim()===""){
-
-                    input.style.borderColor="#d32f2f";
-
-                    valid=false;
-
-                }
-
-                else{
-
-                    input.style.borderColor="#cccccc";
-
-                }
-
-            });
-
-            if(!valid){
+            link.addEventListener("click", function(e) {
 
                 e.preventDefault();
 
-                alert("Please complete all required fields.");
+                dropdown.classList.toggle("active");
 
-            }
-
-        });
-
-    }
-
-
-    /*==========================================
-      BACK TO TOP BUTTON
-    ==========================================*/
-
-    const backTop=document.createElement("div");
-
-    backTop.className="back-top";
-
-    backTop.innerHTML="↑";
-
-    document.body.appendChild(backTop);
-
-    backTop.style.display="none";
-
-
-    window.addEventListener("scroll",function(){
-
-        if(window.scrollY>400){
-
-            backTop.style.display="flex";
-
-        }
-
-        else{
-
-            backTop.style.display="none";
+            });
 
         }
 
     });
 
+    /*=====================================================
+    CLOSE MOBILE MENU WHEN LINK CLICKED
+    =====================================================*/
 
-    backTop.addEventListener("click",function(){
+    document.querySelectorAll(".nav-menu a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            if (window.innerWidth <= 991) {
+
+                navMenu.classList.remove("active");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.innerHTML = "&#9776;";
+
+            }
+
+        });
+
+    });
+
+});
+
+/*=========================================================
+STICKY HEADER
+=========================================================*/
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 80){
+
+        header.classList.add("sticky");
+
+    }else{
+
+        header.classList.remove("sticky");
+
+    }
+
+});
+
+
+/*=========================================================
+ACTIVE MENU
+=========================================================*/
+
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+document.querySelectorAll(".nav-menu a").forEach(link => {
+
+    const href = link.getAttribute("href");
+
+    if(href === currentPage){
+
+        link.classList.add("active");
+
+    }
+
+});
+
+
+/*=========================================================
+SMOOTH SCROLL
+=========================================================*/
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+    anchor.addEventListener("click",function(e){
+
+        const target=document.querySelector(this.getAttribute("href"));
+
+        if(target){
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+
+                behavior:"smooth",
+
+                block:"start"
+
+            });
+
+        }
+
+    });
+
+});
+
+
+/*=========================================================
+SCROLL REVEAL
+=========================================================*/
+
+const revealItems=document.querySelectorAll(".fade-up");
+
+const revealOnScroll=()=>{
+
+    const trigger=window.innerHeight*0.90;
+
+    revealItems.forEach(item=>{
+
+        const top=item.getBoundingClientRect().top;
+
+        if(top<trigger){
+
+            item.classList.add("show");
+
+        }
+
+    });
+
+};
+
+window.addEventListener("scroll",revealOnScroll);
+
+window.addEventListener("load",revealOnScroll);
+
+
+/*=========================================================
+BACK TO TOP BUTTON
+=========================================================*/
+
+const backTop=document.querySelector(".back-to-top");
+
+if(backTop){
+
+    window.addEventListener("scroll",()=>{
+
+        if(window.scrollY>500){
+
+            backTop.classList.add("show");
+
+        }else{
+
+            backTop.classList.remove("show");
+
+        }
+
+    });
+
+    backTop.addEventListener("click",()=>{
 
         window.scrollTo({
 
@@ -233,43 +215,265 @@ navMenu.classList.remove("active");
 
     });
 
+}
 
-    /*==========================================
-      IMAGE HOVER EFFECT
-    ==========================================*/
 
-    const images=document.querySelectorAll(".gallery img,.image-grid img");
+/*=========================================================
+FOOTER YEAR
+=========================================================*/
 
-    images.forEach(function(img){
+const year=document.getElementById("year");
 
-        img.addEventListener("mouseenter",function(){
+if(year){
 
-            img.style.transform="scale(1.05)";
+    year.textContent=new Date().getFullYear();
 
-            img.style.transition=".4s";
+}
+
+
+/*=========================================================
+WINDOW RESIZE
+=========================================================*/
+
+window.addEventListener("resize",()=>{
+
+    if(window.innerWidth>991){
+
+        document.querySelector(".nav-menu")?.classList.remove("active");
+
+        document.querySelector(".menu-toggle")?.classList.remove("active");
+
+        const toggle=document.querySelector(".menu-toggle");
+
+        if(toggle){
+
+            toggle.innerHTML="&#9776;";
+
+        }
+
+        document.querySelectorAll(".dropdown").forEach(item=>{
+
+            item.classList.remove("active");
 
         });
-
-        img.addEventListener("mouseleave",function(){
-
-            img.style.transform="scale(1)";
-
-        });
-
-    });
-
-
-    /*==========================================
-      CURRENT YEAR
-    ==========================================*/
-
-    const year=document.querySelector(".year");
-
-    if(year){
-
-        year.textContent=new Date().getFullYear();
 
     }
 
+});
+/*=========================================================
+ANIMATED STATISTICS COUNTER
+=========================================================*/
+
+const counters = document.querySelectorAll(".stat-number");
+
+const animateCounter = (counter) => {
+
+    const target = parseInt(counter.dataset.target);
+
+    if (isNaN(target)) return;
+
+    let current = 0;
+
+    const increment = Math.max(1, Math.ceil(target / 100));
+
+    const updateCounter = () => {
+
+        current += increment;
+
+        if (current >= target) {
+
+            counter.textContent = target;
+
+        } else {
+
+            counter.textContent = current;
+
+            requestAnimationFrame(updateCounter);
+
+        }
+
+    };
+
+    updateCounter();
+
+};
+
+const counterObserver = new IntersectionObserver((entries, observer) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            animateCounter(entry.target);
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+}, {
+
+    threshold: 0.5
 
 });
+
+counters.forEach(counter => counterObserver.observe(counter));
+
+
+/*=========================================================
+FADE-IN IMAGES
+=========================================================*/
+
+const images = document.querySelectorAll("img");
+
+const imageObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+}, {
+
+    threshold: 0.15
+
+});
+
+images.forEach(image => {
+
+    image.classList.add("fade-up");
+
+    imageObserver.observe(image);
+
+});
+
+
+/*=========================================================
+KEYBOARD ACCESSIBILITY
+=========================================================*/
+
+document.querySelectorAll(".dropdown > a").forEach(link => {
+
+    link.addEventListener("keydown", (e) => {
+
+        if (e.key === "Enter" || e.key === " ") {
+
+            if (window.innerWidth <= 991) {
+
+                e.preventDefault();
+
+                link.parentElement.classList.toggle("active");
+
+            }
+
+        }
+
+    });
+
+});
+
+
+/*=========================================================
+ESC KEY CLOSES MOBILE MENU
+=========================================================*/
+
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "Escape") {
+
+        document.querySelector(".nav-menu")?.classList.remove("active");
+
+        document.querySelector(".menu-toggle")?.classList.remove("active");
+
+        document.querySelectorAll(".dropdown").forEach(item => {
+
+            item.classList.remove("active");
+
+        });
+
+    }
+
+});
+
+
+/*=========================================================
+NAVBAR SHADOW ON SCROLL
+=========================================================*/
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 20) {
+
+        document.querySelector("header")?.classList.add("shadow");
+
+    } else {
+
+        document.querySelector("header")?.classList.remove("shadow");
+
+    }
+
+});
+
+
+/*=========================================================
+PREVENT EMPTY FORM SUBMISSION
+=========================================================*/
+
+const contactForm = document.querySelector(".contact-form");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", (e) => {
+
+        const requiredFields = contactForm.querySelectorAll("[required]");
+
+        let valid = true;
+
+        requiredFields.forEach(field => {
+
+            if (!field.value.trim()) {
+
+                valid = false;
+
+                field.style.borderColor = "#d9534f";
+
+            } else {
+
+                field.style.borderColor = "";
+
+            }
+
+        });
+
+        if (!valid) {
+
+            e.preventDefault();
+
+            alert("Please complete all required fields.");
+
+        }
+
+    });
+
+}
+
+
+/*=========================================================
+CONSOLE MESSAGE
+=========================================================*/
+
+console.log(
+"%cWHITE HEAVEN LINEN™",
+"color:#0B5D8C;font-size:18px;font-weight:bold;"
+);
+
+console.log(
+"%cPremium Textile Solutions Engineered for Quality, Trusted for Performance.",
+"color:#163B5C;font-size:13px;"
+);
