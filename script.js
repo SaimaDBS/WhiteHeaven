@@ -6,23 +6,60 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /*==========================================
-      MOBILE MENU
-    ==========================================*/
+// =====================================
+// MOBILE MENU
+// =====================================
 
-    const menuButton = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector("nav ul");
+const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".nav-menu");
 
-    if (menuButton && navMenu) {
+menuToggle.addEventListener("click", () => {
 
-        menuButton.addEventListener("click", function () {
+    navMenu.classList.toggle("active");
 
-            navMenu.classList.toggle("show");
+});
 
-        });
+// =====================================
+// MOBILE DROPDOWN
+// =====================================
 
-    }
+document.querySelectorAll(".dropdown > a").forEach(item=>{
 
+item.addEventListener("click",function(e){
+
+if(window.innerWidth<992){
+
+e.preventDefault();
+
+this.parentElement.classList.toggle("active");
+
+}
+
+});
+
+});
+
+// =====================================
+// CLOSE MENU AFTER CLICK
+// =====================================
+
+document.querySelectorAll(".nav-menu a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+if(window.innerWidth<992){
+
+if(!link.parentElement.classList.contains("dropdown")){
+
+navMenu.classList.remove("active");
+
+}
+
+}
+
+});
+
+});
 
     /*==========================================
       ACTIVE NAVIGATION
